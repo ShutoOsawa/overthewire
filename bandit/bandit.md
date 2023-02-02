@@ -98,6 +98,93 @@ The password is JVNBBFSmZwKKOP0XbFXOoW8chDz5yVRv
 
 ## Level 12 -> Level 13
 
+Create a new directory since the user does not have a permission to create/write file in the current directory.
+```
+mkdir /tmp/tofu
+```
+Copy
+```
+cp data.txt /tmp/tofu/data.txt
+```
+
+Check file type
+```
+file data.txt
+data.txt: ASCII text
+```
+
+Cat data.txt gives hexdump
+![[Pasted image 20230202171251.png]]
+
+
+```
+xxd -r /tmp/tofu/data.txt > /tmp/tofu/data2
+```
+or 
+move to /tmp/tofu folder and 
+```
+xxd -r data.txt > data2
 ```
 
 ```
+file data2
+data2: bzip2 compressed data, block size = 900k
+```
+
+```
+bzip2 -dc data2 > data3
+```
+
+```
+file data3
+data3: gzip compressed data, was "data4.bin", last modified: Wed Jan 11 19:18:38 2023, max compression, from Unix, original size modulo 2^32 20480
+```
+
+```
+gzip -dc data3 > data4
+```
+
+```
+file data4
+data4: POSIX tar archive (GNU)
+```
+
+The command below produces data5.bin
+```
+tar -xvf data4
+```
+
+```
+file data5.bin
+data5.bin: POSIX tar archive (GNU)
+```
+
+```
+tar -xvf data5.bin
+```
+
+```
+file data6.bin
+data6.bin: bzip2 compressed data, block size = 900k
+```
+
+```
+bzip2 -dc data6.bin > data7
+```
+
+```
+file data8.bin
+data8.bin: gzip compressed data, was "data9.bin", last modified: Wed Jan 11 19:18:38 2023, max compression, from Unix, original size modulo 2^32 49
+```
+
+```
+gzip -dc data8.bin > data9
+```
+
+Finally!
+```
+cat data9
+The password is wbWdlBxEir4CaE8LaPhauuOo6pwRmrDw
+```
+
+## Level 13 -> Level 14
