@@ -21,13 +21,13 @@ cat ./-
 rRGizSaX8Mk1RTb1CNQoXTcYZWU6lgzi
 ```
 
-## Level 3
+## Level 2 -> Level 3
 ```
 cat "spaces in this filename"
 aBZ0W5EmUfAf7kHTQeOwd8bauFJ2lAiG
 ```
 
-## Level 4
+## Level 3 -> Level 4
 ```
 cd inhere
 ls -al
@@ -35,20 +35,20 @@ cat .hidden
 2EW7BBsr6aMMoJ2HjW067dm8EgX26xNe
 ```
 
-## Level 5
+## Level 4 -> Level 5
 ```
 cat ./-file07
 lrIWWI6bB37kxfiCQZqUdOIYfr6eEeqR
 ```
 
-## Level 6
+## Level 5 -> Level 6
 ```
 find . -size 1033c
 cat ./maybehere07/.file2
 P4L4vucdmLnm8I7Vl7jG1ApGSfjYKqJU
 ```
 
-## Level 7
+## Level 6 -> Level 7
 
 ```
 find / -size 33c -user bandit7 -group bandit6 2> /dev/null
@@ -56,14 +56,14 @@ find / -size 33c -user bandit7 -group bandit6 2> /dev/null
 z7WtoNQU2XfjmMtWA8u5rN4vzqu4v99S
 ```
 
-## Level 8
+## Level 7 -> Level 8
 
 ```
 cat data.txt | grep millionth
 millionth       TESKZC0XvTetK0S9xNwm25STk5iWrBvP
 ```
 
-## Level 9
+## Level 8 -> Level 9
 
 It does not work without sort.
 
